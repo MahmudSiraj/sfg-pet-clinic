@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'home')}">
 <head>
     <meta charset="UTF-8">
     <title>Pet Clinic Index</title>
@@ -7,23 +7,16 @@
 <body>
 <!--/*@thymesVar id="vet" type="guru.springframework.sfgpetclinic.model.Vet"*/-->
 
-<h1 th:text="'List of Vets'">List of Vets...</h1>
+<h2 th:text="#{welcome}">Welcome</h2>
 
-<table>
-    <thead>
-    <tr>
-        <th>ID</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="vet:${vets}"
-        <td th:text="${vet.id}">1</td>
-        <td th:text="${vet.firstName}">Joe</td>
-        <td th:text="${vet.lastName}">Buck</td>
-    </tr>
-    </tbody>
+
+<div class="row">
+    <div class="col-md-12">
+        <img class="img-responsive" src="../static/resources/images/pets.png" th:src="@{/resources/images/pets.png}"/>
+    </div>
+</div>
+
+
 </table>
 </body>
 </html>
